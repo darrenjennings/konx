@@ -35,11 +35,11 @@ export default defineComponent({
     }))
     
     const previous = computed(() => {      
-      return $site.value.themeConfig.sidebar.find((i, index) => index === idx.value - 1)
+      return idx.value !== -1 && $site.value.themeConfig.sidebar.find((i, index) => index === idx.value - 1)
     })
     
     const next = computed(() => {      
-      return $site.value.themeConfig.sidebar.find((i, index) => index === idx.value + 1)
+      return idx.value !== -1 && $site.value.themeConfig.sidebar.find((i, index) => index === idx.value + 1)
     })
 
     return {

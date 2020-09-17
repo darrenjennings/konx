@@ -6,16 +6,13 @@ module.exports = {
     sidebar: [
       {
         text: 'Introduction',
-        link: '/',
+        link: '',
         title: 'swrv'
       },
       {
         text: 'Getting Started',
-        link: '/getting-started'
-      },
-      {
-        text: 'Api',
-        link: '/api'
+        link: 'getting-started',
+        title: 'getting started'
       }
     ]
   }

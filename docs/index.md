@@ -1,19 +1,34 @@
-# swrv
+# kong-{my-repo}
 
 [![](https://img.shields.io/npm/v/swrv.svg)](https://www.npmjs.com/package/swrv)
 
-swrv (pronounced "swerve") is a library using the @vue/composition-api for
-remote data fetching. It is largely a port of swr.
+```shell
+yarn add swrv
+```
 
-The name “SWR” is derived from stale-while-revalidate, a cache invalidation
-strategy popularized by HTTP RFC 5861. SWR first returns the data from cache
-(stale), then sends the fetch request (revalidate), and finally comes with the
-up-to-date data again.
+```vue
+<template>
+  <div>
+    <div v-if="error">failed to load</div>
+    <div v-if="!data">loading...</div>
+    <div v-else>hello {{ data.name }}</div>
+  </div>
+</template>
 
-Features:
+<script>
+import useSWRV from 'swrv'
 
-Transport and protocol agnostic data fetching Fast page navigation Revalidation
-on focus Interval polling Request deduplication TypeScript ready Minimal API
-stale-if-error Customizable cache implementation SSR support Vue 3 Support With
-swrv, components will get a stream of data updates constantly and automatically.
-Thus, the UI will be always fast and reactive.
+export default {
+  name: 'Profile',
+
+  setup() {
+    const { data, error } = useSWRV('/api/user', fetcher)
+
+    return {
+      data,
+      error,
+    }
+  },
+}
+</script>
+```

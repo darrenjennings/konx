@@ -7,7 +7,6 @@
             <a href="/" class="block lg:mr-4 w-16">
               <img class="transform rotate-45 w-full" src="https://github.com/Kong/swrv/raw/master/logo.png"/>
             </a>
-            <!-- <span class="text-2xl ml-2">swrv</span> -->
           </div>
         </div>
 
